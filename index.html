@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Typing Challenge | CSC336 Lab Mid</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sea"><i class="ray"></i><i class="ray"></i><i class="ray"></i></div>
+<main>
+  <!-- HOME SCREEN -->
+  <section id="home">
+    <h1>Typig Game</h1>
+    <p>Dive in. Pick your depth, then choose a challenge. Difficulty changes speed, lives, time limits and penalties.</p>
+    <div class="row" id="diffRow" role="group" aria-label="Difficulty">
+      <button data-d="easy" class="sel">Easy</button>
+      <button data-d="medium">Medium</button>
+      <button data-d="hard">Hard</button>
+    </div>
+    <div class="row" id="themeRow" role="group" aria-label="Theme">
+      <button data-t="abyss" class="sel">Abyss</button><button data-t="neon">Neon</button><button data-t="sunrise">Sunrise</button><button data-t="forest">Forest</button>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h2>Bubbles</h2>
+        <p>Letters float up in bubbles. Press the matching key to pop them before they escape. Too many misses ends the game.</p>
+        <button class="primary" id="startA">Start</button>
+      </div>
+      <div class="card">
+        <h2>KeyMagnet</h2>
+        <p>A target key appears. Hit it as fast as you can before time runs out. Choose which keys to practise.</p>
+        <div class="row"><label for="setSel">Key set</label>
+          <select id="setSel">
+            <option value="home">Home row (A S D F J K L)</option>
+            <option value="top">Top row (Q–P)</option>
+            <option value="bottom">Bottom row (Z–M)</option>
+            <option value="all">All letters</option>
+          </select></div>
+        <button class="primary" id="startB">Start</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAME SCREEN -->
+  <section id="game" hidden>
+    <h1 id="title"></h1>
+    <div class="row">
+      <button class="primary" id="bStart">Start</button>
+      <button id="bRestart">Restart</button>
+      <button id="bReset">Reset</button>
+      <button id="bTheme">Theme</button>
+      <button id="bSnd">Sound: On</button>
+    </div>
+    <div id="hud" aria-live="polite"></div>
+    <div id="fb" aria-live="assertive"></div>
+    <div style="position:relative">
+      <div id="stage"></div>
+      <div id="overlay"></div>
+    </div>
+    <div id="kbd" hidden></div>
+  </section>
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>
